@@ -1,0 +1,1 @@
+/usr/bin/c++  -Werror=maybe-uninitialized -Wl,--dependency-file=CMakeFiles/gtest_exe.dir/link.d CMakeFiles/gtest_exe.dir/main.cpp.o -o gtest_exe  libgtest_lib.a

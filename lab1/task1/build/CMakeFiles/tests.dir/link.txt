@@ -1,0 +1,1 @@
+/usr/bin/c++  -Werror=maybe-uninitialized -Wl,--dependency-file=CMakeFiles/tests.dir/link.d CMakeFiles/tests.dir/test/tests01.cpp.o -o tests  libtask1_lib.a -lgtest_main -lgtest
