@@ -5,8 +5,11 @@ int growCounter(int upSpeed, int downSpeed, int desiredHeight){
     if (upSpeed<0 || downSpeed<0 || desiredHeight<0){
         return -1;
     }
-    if (upSpeed<=downSpeed){
+    if (upSpeed<downSpeed ||(upSpeed==downSpeed && upSpeed<desiredHeight)){
         return -1;
+    }
+    if (desiredHeight==0){
+        return 0;
     }
 
     while (true){

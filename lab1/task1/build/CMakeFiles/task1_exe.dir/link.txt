@@ -1,1 +1,0 @@
-/usr/bin/c++  -Werror=maybe-uninitialized -Wl,--dependency-file=CMakeFiles/task1_exe.dir/link.d CMakeFiles/task1_exe.dir/main.cpp.o -o task1_exe  libtask1_lib.a
