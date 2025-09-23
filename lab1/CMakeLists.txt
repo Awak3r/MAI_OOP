@@ -6,10 +6,10 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
-# Добавление опций компиляции
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror=maybe-uninitialized")
 
-# Установка Google Test
+
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -23,7 +23,7 @@ add_executable(${CMAKE_PROJECT_NAME}_exe main.cpp)
 
 target_link_libraries(${CMAKE_PROJECT_NAME}_exe PRIVATE ${CMAKE_PROJECT_NAME}_lib)
 
-# Добавление тестов
+
 enable_testing()
 
 add_executable(tests test/tests01.cpp)
