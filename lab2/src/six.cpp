@@ -60,12 +60,11 @@ size_t Six::getSize(){
     return len;
 }
 
-void Six::printclass(){
-    std::cout<<"[ ";
-    for(size_t i =0; i<this->arraySize; i++){
-        std::cout<<this->dataArray[i]<<" ";
+std::ostream& Six::print(std::ostream& outputStream) const {
+    for (size_t i = 0; i < arraySize; ++i) {
+        outputStream << dataArray[i];
     }
-    std::cout<<"]\n";
+    return outputStream;
 }
 
 void Six::plus1(unsigned char newValue){
@@ -80,6 +79,9 @@ void Six::plus1(unsigned char newValue){
 }
 
 void Six::minus1(){
+    if (arraySize<1){
+        throw std::logic_error("error: invalid length\n");
+    }
     unsigned char* newArray = new unsigned char[arraySize - 1];
     for (size_t i = 0; i < arraySize - 1; ++i){
         newArray[i] = dataArray[i];
@@ -158,6 +160,34 @@ Six Six::remove(const Six& other){
     }
     
     return *this;
+}
+
+Six Six::operator+(const Six& other) const {
+    Six result = *this;
+    result.add(other);
+    return result;
+}
+
+Six Six::operator-(const Six& other) const {
+    Six result = *this;
+    result.remove(other);
+    return result;
+}
+
+bool Six::operator==(const Six& other) const {
+    return this->equals(other);
+}
+
+bool Six::operator>(const Six& other) const {
+    return this->bolshe(other);
+}
+
+bool Six::operator<(const Six& other) const {
+    return this->menshe(other);
+}
+
+std::ostream& operator<<(std::ostream& os, const Six& num) {
+    return num.print(os);
 }
 
 bool Six::equals(const Six& other) const {

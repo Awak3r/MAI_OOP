@@ -1,7 +1,7 @@
-
 #include "include/six.h"
 
 
-int main(){
+int main()
+{
 
 }
