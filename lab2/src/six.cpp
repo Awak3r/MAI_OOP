@@ -90,7 +90,7 @@ void Six::minus1(){
     dataArray = newArray;
     --arraySize;
 }
-//5, 5 1, 1
+
 Six Six::add(const Six& other){
     if (this->arraySize != other.arraySize){
         throw std::logic_error("error: cannot be performed\n");
